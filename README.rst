@@ -10,6 +10,7 @@ Two apps were made in the root of this folder (outside of clowning_around projec
 - api: the logic for API endpoints  
 
 The endpoints are as follows:  
+
 URL | GET | POST | PATCH
 --- | --- | --- | ---
 clients/appointments | All appointments | N/a | N/a
@@ -23,16 +24,27 @@ clowns/appointments/<int:pk>/issue | N/a | Create issue for appointment | N/a
 clowns/appointments/<int:pk>/clientdetails | N/a | Provide reason and appointment, receive client details | N/a
 
 All views were implemented using generic views.  
-To test the endpoints with pre-made Postman queries: https://www.getpostman.com/collections/6f138484d70ea88e9f1d 
+
+To test the endpoints with pre-made Postman queries: https://www.getpostman.com/collections/6f138484d70ea88e9f1d  
+
 The PostgreSQL database was dumped to `datadump.json`. Load it using `docker-compose -f local.yml run --rm django python manage.py loaddata datadump.json`  
-A super user account: username = admin | password = tealeaves123
+
+A super user account: username = admin | password = tealeaves123  
+
 To run the project:  
-1. Build the image: `docker-compose -f local.yml build`
-2. Make migrations: `docker-compose -f local.yml run --rm django python manage.py makemigrations`
-3. Run migrations: `docker-compose -f local.yml run --rm django python manage.py migrate`
-4. Load database datadump: `docker-compose -f local.yml run --rm django python manage.py loaddata datadump.json`
-5. Run the docker image: `docker-compose -f local.yml up`
-6. Run the server: `docker-compose -f local.yml run --rm django python manage.py runserver`
+
+1. Build the image: `docker-compose -f local.yml build`  
+
+2. Make migrations: `docker-compose -f local.yml run --rm django python manage.py makemigrations`  
+
+3. Run migrations: `docker-compose -f local.yml run --rm django python manage.py migrate`  
+
+4. Load database datadump: `docker-compose -f local.yml run --rm django python manage.py loaddata datadump.json`  
+
+5. Run the docker image: `docker-compose -f local.yml up`  
+
+6. Run the server: `docker-compose -f local.yml run --rm django python manage.py runserver`  
+
 
 
 
