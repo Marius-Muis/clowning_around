@@ -3,8 +3,10 @@ Clowning Around
 
 # Marius's notes on solution:
 -----------------------------
-Two apps were made in the root of this folder (outside of clowning_around project):   
-- appointmnets: contain the models for the appointments
+Two apps were made in the root of this folder (outside of clowning_around project):  
+
+- appointmnets: contain the models for the appointments  
+
 - api: the logic for API endpoints  
 
 The endpoints are as follows:  
