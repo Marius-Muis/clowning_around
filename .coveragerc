@@ -1,0 +1,5 @@
+[run]
+include = clowning_around/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
