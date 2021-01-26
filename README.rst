@@ -10,18 +10,27 @@ Two apps were made in the root of this folder (outside of clowning_around projec
 - api: the logic for API endpoints  
 
 The endpoints are as follows:  
-
-URL | GET | POST | PATCH
---- | --- | --- | ---
-clients/appointments | All appointments | N/a | N/a
-clients/appointments/upcoming | Upcoming appointments | N/a | N/a
-clients/appointments/past | Past appointment | N/a | N/a
-clients/appointments/<int:pk> | Single appointment | N/a | Update rating
-troupeleader/createappointment | N/a | Create appointment | N/a
-clowns/appointments | All appointments | N/a | N/a
-clowns/appointments/<int:pk> | Single appointment | N/a | Change status
-clowns/appointments/<int:pk>/issue | N/a | Create issue for appointment | N/a
-clowns/appointments/<int:pk>/clientdetails | N/a | Provide reason and appointment, receive client details | N/a
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+
+| URL                                        | GET                   | POST                                                   | PATCH         |
++============================================|=======================|========================================================|===============+
+| clients/appointments                       | All appointments      | N/a                                                    | N/a           |
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+
+| clients/appointments/upcoming              | Upcoming appointments | N/a                                                    | N/a           |
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+
+| clients/appointments/past                  | Past appointment      | N/a                                                    | N/a           |
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+   
+| clients/appointments/<int:pk>              | Single appointment    | N/a                                                    | Update rating |
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+
+| troupeleader/createappointment             | N/a                   | Create appointment                                     | N/a           |
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+
+| clowns/appointments                        | All appointments      | N/a                                                    | N/a           |
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+
+| clowns/appointments/<int:pk>               | Single appointment    | N/a                                                    | Change status |
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+
+| clowns/appointments/<int:pk>/issue         | N/a                   | Create issue for appointment                           | N/a           |
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+
+| clowns/appointments/<int:pk>/clientdetails | N/a                   | Provide reason and appointment, receive client details | N/a           |
++--------------------------------------------+-----------------------+--------------------------------------------------------+---------------+
 
 All views were implemented using generic views.  
 
@@ -46,7 +55,7 @@ To run the project:
 6. Run the server: `docker-compose -f local.yml run --rm django python manage.py runserver`  
 
 
-
+---
 
 There’s nothing quite as important as ensuring you’re punctual for any and all appointments made. This is a sign of respect and concern for the other parties time and needs. No being understands this quite as well as a clown. Your task, should you be so inclined, is to build a Django application, specifically for the time management needs of this world’s greatest child entertainers.
 
