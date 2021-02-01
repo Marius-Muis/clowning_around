@@ -1,19 +1,19 @@
-FROM python:3.6
+FROM python:3.6-alpine
 
 ENV PYTHONUNBUFFERED 1
 
-RUN apt-get update \
+RUN apk update \
     # psycopg2 dependencies
-    && apt-get --no-cache build-deps gcc python3-dev musl-dev -y \
-    && apt-get --no-cache  postgresql-dev -y \
+    && apk add --no-cache --virtual build-deps gcc python3-dev musl-dev \
+    && apk add --no-cache postgresql-dev \
     # Pillow dependencies
-    && apt-get --no-cache  jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev -y \
+    && apk add --no-cache jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev \
     # CFFI dependencies
-    && apt-get --no-cache  libffi-dev py-cffi -y \
+    && apk add --no-cache libffi-dev py-cffi \
     # Translations dependencies
-    && apt-get --no-cache  gettext -y \
+    && apk add --no-cache gettext \
     # https://docs.djangoproject.com/en/dev/ref/django-admin/#dbshell
-    && apt-get --no-cache  postgresql-client
+    && apk add --no-cache postgresql-client
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements /requirements
