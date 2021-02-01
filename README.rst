@@ -38,7 +38,7 @@ To test the endpoints with pre-made Postman queries: https://www.getpostman.com/
 
 The PostgreSQL database was dumped to `datadump.json`. Load it using `docker-compose -f local.yml run --rm django python manage.py loaddata datadump.json`  
 
-A super user account: username = admin | password = tealeaves123  
+Create a superuser account with `docker-compose -f local.yml run --rm django python manage.py createsuperuser` to view the admin page.
 
 To run the project:  
 
