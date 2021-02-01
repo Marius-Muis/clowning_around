@@ -2,7 +2,7 @@ FROM python:3.6
 
 ENV PYTHONUNBUFFERED 1
 
-RUN apk update \
+RUN apt-get update \
     # psycopg2 dependencies
     && apt-get --no-cache build-deps gcc python3-dev musl-dev -y \
     && apt-get --no-cache  postgresql-dev -y \
