@@ -53,6 +53,9 @@ class ClientsAppointmentsRateView(RetrieveUpdateAPIView):
 
     def get_queryset(self):
         if self.request.user.is_client:
+            rating = self.request.data.get('rating')
+            if len(rating.replace(u"\U0001F921", '')) != 0:
+                raise ValidationError('Rating may only contian clown emojis.')
             return Appointment.objects.filter(pk=self.kwargs['pk'],
                                               client__user=self.request.user)
         else:
